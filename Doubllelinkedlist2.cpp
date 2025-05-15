@@ -77,6 +77,26 @@ class DoubleLinkedList{
                 cout << "\nList is empty" << endl;
                 return;
             }
+            cout << "\nEnter Nim yang akan di delet";
+            int rollNo;
+            cin >> rollNo;
+
+            Node *current = START;
+            //step 1 traverse the list to find the node
+            while(current != NULL && current->noMhs != rollNo)
+                current = current->next;
+
+            if(current == NULL){
+                cout << "RECORD NOT FOUND" << endl;
+                return;
+            }
+
+            //step 2 if node is at the beginning
+            if (current == START){
+                START = current->next;  //step 2a  start = start
+                if(START != NULL)
+                    START->prev = NULL;
+            }
             
     }
 };
