@@ -24,5 +24,20 @@ class DoubleLinkedList{
 
             //step 1 allocation mememory of new node
             Node *newNode = new Node();
+            //step 2 assign value to the data field
+            newNode->noMhs = nim;
+
+            //step 3 insert at begginning if list empty or nim is smallest
+            if (START == NULL || nim <= START->noMhs){
+                cout << "\nDuplicate number not allowed" << endl;
+                return;
+            }
+
+            //step 4 newNode.next = START
+            newNode->next = START;
+
+            //step5 start.prev = newNode(if start exists)
+            if(START != NULL)
+            START->prev = newNode;
         }
 };
