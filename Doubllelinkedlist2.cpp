@@ -97,6 +97,17 @@ class DoubleLinkedList{
                 if(START != NULL)
                     START->prev = NULL;
             }
-            
+            else{
+            //step3 link prev node to next current
+            current->prev->next = current->prev;
+
+            //step 4 if current is not the last node
+            if(current->next != NULL)
+                current->next->prev = current->prev;
+            }
+
+            //step 5 delet the node
+            delete current;
+            cout << "Record with roll number" << rollNo << "deleted" << endl;
     }
 };
