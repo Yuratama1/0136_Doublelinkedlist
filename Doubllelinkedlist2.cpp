@@ -47,4 +47,11 @@ class DoubleLinkedList{
             START = newNode;
             return;
         }
+
+        //insert in between node
+        //step 8 locate posisi for insertion
+        Node *current = START;
+        while (current->next != NULL && current->next->noMhs < nim){
+            
+        }
 };
